@@ -1,9 +1,6 @@
 pragma solidity ^0.5.0;
 
 contract evoting {
-  uint public taskCount = 0;
-
-
   struct vote{
       address voterAddress;
       bool choice;
@@ -31,11 +28,11 @@ contract evoting {
 
     	//creates a new evoting contract
 	    constructor(
-        /*string memory _evotingOfficialName,
-        string memory _proposal*/) public {
+        string memory _evotingOfficialName,
+        string memory _proposal) public {
         evotingOfficialAddress = msg.sender;
-        evotingOfficialName = "Test Voting"; //_evotingOfficialName;
-        proposal = "Yes or No!!!"; //_proposal;
+        evotingOfficialName = _evotingOfficialName;
+        proposal = _proposal;
         
         state = State.Created;
         }
